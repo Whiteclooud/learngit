@@ -22,7 +22,8 @@ $ git config --global user.email "email@example.com"
 head指向的版本就是当前版本
 ```git reset --hard commit_id  #回退到commit--id这个版本
 #HEAD^为回退到上一个版本
-#HEAD^^为回退到上上个版本```
+#HEAD^^为回退到上上个版本
+```
 `cat 文件名  #查看文件内容`
 `git reflog #记录每一次命令，可用于恢复到新版`
 ### 工作区和暂存区
