@@ -1,10 +1,10 @@
 # git常用指令
 ## 创建版本库
 设置用户：
-'''git
+```git
 $ git conig --global user.name "Your Name"
 $ git config --global user.email "email@example.com"
-'''
+```
 ' mkdir learngit #创建文件夹'
 'cd #进入文件夹'
 'git init                      #将这个目录变成git可以管理的仓库'
