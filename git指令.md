@@ -4,28 +4,32 @@
 ```git
 $ git conig --global user.name "Your Name"
 $ git config --global user.email "email@example.com"
+
+ mkdir learngit #创建文件夹
+cd #进入文件夹`
+git init                      #将这个目录变成git可以管理的仓库
+git add ***                   #把文件添加到仓库
+git commit -m"本次提交的说明"  #把文件提交到仓库
 ```
-` mkdir learngit #创建文件夹`
-`cd #进入文件夹`
-`git init                      #将这个目录变成git可以管理的仓库`
-`git add ***                   #把文件添加到仓库`
-`git commit -m"本次提交的说明"  #把文件提交到仓库`
 添加文件到Git仓库，分两步：
 1. 使用命令git add <file>，注意，可反复多次使用，添加多个文件；
 2. 使用命令git commit -m <message>，完成。
 
 ## 时光机穿梭
-`git status  #查看仓库状态`
-`git diff    #查看修改了什么内容`
+```
+git status  #查看仓库状态
+git diff    #查看修改了什么内容
+```
 ### 版本回退
-`git log [--pretty=oneline]  #显示从最近到最远的提交日志，以便确定要回退到哪个版本`
-head指向的版本就是当前版本
-```git reset --hard commit_id  #回退到commit--id这个版本
+```
+git log [--pretty=oneline]  #显示从最近到最远的提交日志，以便确定要回退到哪个版本
+#head指向的版本就是当前版本
+git reset --hard commit_id  #回退到commit--id这个版本
 #HEAD^为回退到上一个版本
 #HEAD^^为回退到上上个版本
+cat 文件名  #查看文件内容  
+git reflog #记录每一次命令，可用于恢复到新版  
 ```
-`cat 文件名  #查看文件内容`
-`git reflog #记录每一次命令，可用于恢复到新版`
 ### 工作区和暂存区
 ![](D:\git\0.jfif)
 我们把文件往Git版本库里添加的时候，是分两步执行的：
