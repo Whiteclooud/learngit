@@ -6,7 +6,8 @@ $ git conig --global user.name "Your Name"
 $ git config --global user.email "email@example.com"
 
  mkdir learngit #创建文件夹
-cd #进入文件夹`
+cd #进入文件夹  
+cd ..\   #返回上一级目录
 git init                      #将这个目录变成git可以管理的仓库
 git add ***                   #把文件添加到仓库
 git commit -m"本次提交的说明"  #把文件提交到仓库
@@ -63,6 +64,9 @@ git push -u origin master   #第一次推送加-u(会把本地与远程的分支
 ```
 ### 删除远程仓库
 先查看远程库信息
-```git remote -v```
+```git remote -v```  
 再根据名字删除
-```git remote rm origin```
+```git remote rm origin```  
+### 根据远程仓库克隆  
+```git clone git@github.com:Whiteclooud/gitskills.git #克隆一个本地仓库```  
+
