@@ -39,19 +39,18 @@ git reflog #记录每一次命令，可用于恢复到新版
 你可以简单理解为，需要提交的文件修改通通放到暂存区，然后，一次性提交暂存区的所有修改。
 ### 撤销和修改
 1.未使用 git add
-`git restore -- readme.txt`
+```git restore -- readme.txt```
 命令git restore -- readme.txt意思就是，把readme.txt文件在工作区的修改全部撤销，这里有两种情况：
 一种是readme.txt自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；
 一种是readme.txt已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。
 总之，就是让这个文件回到最近一次git commit或git add时的状态。
 2.使用 git add
-`git restore --staged readme.md #使用后回到场景1，再按1操作`
+```git restore --staged readme.md #使用后回到场景1，再按1操作```
 3.使用 git commit
 版本回退，前提是没有提交到远程仓库
 ### 删除文件
 从版本库中删除文件
-`rm test.txt      #删除文件`
-`git rm test.txt  #add删除操作`
-`git commit -m""  #提交删除`
-
-`git restore <file> #误删后恢复到版本库最新版本`
+```rm test.txt      #删除文件
+git rm test.txt  #add删除操作
+git commit -m""  #提交删除`
+git restore <file> #误删后恢复到版本库最新版本```
