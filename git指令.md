@@ -68,5 +68,37 @@ git push -u origin master   #第一次推送加-u(会把本地与远程的分支
 再根据名字删除
 ```git remote rm origin```  
 ### 根据远程仓库克隆  
-```git clone git@github.com:Whiteclooud/gitskills.git #克隆一个本地仓库```  
+```git clone git@github.com:Whiteclooud/gitskills.git #克隆一个本地仓库```   
+
+## 分支管理  
+### 创建与合并分支  
+#### 分支概念
+一开始，master分支是一条直线，git用master指向最新提交，用head指向master。这样就能确定当前分支以及当前分支的提交点。  
+![aa](https://www.liaoxuefeng.com/files/attachments/919022325462368/0)  
+当创建新分支例如`dev`时，指向`master`相同的提交，再把`head`指向`dev`，就表示当前分支再`dev`上。  
+![aa](https://www.liaoxuefeng.com/files/attachments/919022363210080/l)  
+从现在开始，对工作区的修改和提交就是针对dev分支了，比如新提交一次后，dev指针往前移动一步，而master指针不变：  
+![aa](https://www.liaoxuefeng.com/files/attachments/919022387118368/l)  
+假如我们在dev上的工作完成了，就可以把dev合并到master上。Git怎么合并呢？最简单的方法，就是直接把master指向dev的当前提交，就完成了合并：  
+![aa](https://www.liaoxuefeng.com/files/attachments/919022412005504/0)  
+合并完分支后，甚至可以删除dev分支。删除dev分支就是把dev指针给删掉，删掉后，我们就剩下了一条master分支：  
+！[aa](https://www.liaoxuefeng.com/files/attachments/919022479428512/0)
+#### 指令
+
+```
+#创建并切换
+git checkout -b dev
+#相当于
+git branch dev
+git checkout dev
+#更科学的指令
+git switch -c dev  #创建并切换
+git switch master  #切换到已有的
+git branch -d <name>  #删除分支
+
+git branch      #查看当前分支
+
+git merge dev   #合成分支
+```
+
 
