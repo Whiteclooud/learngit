@@ -97,10 +97,25 @@ git switch master  #切换到已有的
 git branch -d <name>  #删除分支
 
 git branch      #查看当前分支
-
 git merge dev   #合成分支
 ```  
 ### 解决冲突  
 当2个分支内容不一致时，合并分支就会产生冲突，必须手动处理解决冲突后再提交。
+master和featre1有冲突时，变成这样：  
+![aa](https://www.liaoxuefeng.com/files/attachments/919023000423040/0)  
+解冲突后，变成了这样：  
+![aa](https://www.liaoxuefeng.com/files/attachments/919023031831104/0)
 ```git status```可以告诉我们冲突的文件。  
-```git log --graph```查看分支合并图
+```git log --graph```查看分支合并图  
+
+### 分支管理策略    
+在合并分支时，git默认使用```fast forward```模式：删除分支后会丢掉分支信息。  
+```git merge --no--ff dev```禁用ff模式：在合并时会生成一个新的commit,这样在分支历史中可以查看分支信息。  
+合并后像这样：  
+![aa](https://www.liaoxuefeng.com/files/attachments/919023225142304/0)  
+用```fast forward```合并就看不出来曾经做过合并，```--no--ff```合并后有历史分支，能看出来曾经做过合并。  
+**分支策略**  
+在实际开发中，我们应按照几个基本原则进行分支管理:
+首先，```master```分支要非常稳定，仅用于发布新版本，平时不能在上面干活；  
+干活都在```dev```分支上，所以```dev```分支是不稳定的，要发布新版本时将```dev```合并到```master```上再在```master```上发布。  
+
